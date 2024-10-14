@@ -5,9 +5,9 @@ output:
     df_print: paged
 ---
 
-### Student Name:
+### Student Name: Ebrahim Tawfeeq Ebrahim
 
-### Student ID:
+### Student ID: STU-00104476
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook for practicing basic R data types, which is part of the ST2195 course at UOL and BIBF.
 Please answer the following questions by writing proper R code, and upload the completed file to a GitHub repository shared with your teacher (Github id heshaaam\@gmail.com).
@@ -38,79 +38,130 @@ rm(list = ls())
 Please place your answer in the available code chunks below the question.
 
 ```{r}
-
+var1 <- 3
+var2 <- 6 
 ```
 
 2. Add the two variables and save them as a new variable named var3 and print the result.
 
 ```{r}
-
+var3 <- var1 + var2
+print(var3)
 ```
 
 3. Check the class, mode, and type for var1, var2, var3 and $\pi$ (is found under the variable name pi in R)
 
 ```{r}
+class(var1)
+mode(var1)
+typeof(var1)
 
+class(var2)
+mode(var2)
+typeof(var2)
+
+class(var3)
+mode(var3)
+typeof(var3)
+
+class(pi)
+mode(pi)
+typeof(pi)
 ```
 
 4. Create two character variables text1 and text2 containing any text of choice. Check mode, class, and type of the first one.
 
 ```{r}
-
+text1 <- "Hello, I am Ebrahim"
+text2 <- "I am from Bahrain"
+mode(text1)
+class(text1)
+typeof(text1)
 ```
 
 Add var1 from above to text1 and report the result.
 
 ```{r}
-
+result <- paste(text1, var1)
+print(result)
 ```
 
 5. Coerce or cast (force data type) var3 to integer, cast an integer variable to double, cast a string to a double.
 
 ```{r}
+var3_int <- as.integer(var3)
+typeof(var3_int)
 
+int_variable <- var3_int
+double_var <- as.double(var3_int)
+typeof(double_var)
+
+string_var <- "3.14"
+double_from_string <- as.double(string_var)
+typeof(double_from_string)
 ```
 
 6. Use the floor and ceiling functions to caclulate the floor and ceiling of $\pi$.
 Check whether the floor of $\pi$ is an integer?
 
 ```{r}
+floor_pi <- floor(pi)
+ceiling_pi <- ceiling(pi)
+print(floor_pi)
+print(ceiling_pi)
 
+is_int_floor <- is.integer(floor_pi)
+print(is_int_floor)
 ```
 
 7. Convert the ‘3.56437’ string as number.
 
 ```{r}
-
+number <- as.numeric("3.56437")
+print(number)
 ```
 
 8. Infinity (i.e. $\infty$) is written in R as \\inf . Calculate $\infty$ divided by $-\infty$.
 
 ```{r}
-
+division <- Inf / -Inf
+print(division)
 ```
 
 9. Create two freely chosen complex numbers.
 ```{r}
-
+complex1 <- 5i
+complex2 <- 2i
 ```
 
 
 * Check that they are complex indeed.
 ```{r}
-
+check1 <- is.complex(complex1)
+check2 <- is.complex(complex2)
+print(check1)
+print(check2)
 ```
 
 
 * Add, multiply and divide one by another.
 ```{r}
+add_complex <- complex1 + complex2
+print(add_complex)
 
+multiply_complex <- complex1 * complex2
+print(multiply_complex)
+
+divide_complex <- complex1 / complex2
+print(divide_complex)
 ```
 
 
 * Add an integer to their sum.
 ```{r}
-
+integer_value <- 5
+int_to_sum <- add_complex + integer_value
+print(int_to_sum)
 ```
 
 10. Multiply a logical TRUE by a logical FALSE. 
@@ -118,7 +169,11 @@ Check whether the floor of $\pi$ is an integer?
 Raise the logical TRUE to the 7-th power.
 
 ```{r}
+logical_product <- TRUE * FALSE
+print(logical_product)
 
+TRUE_power <- TRUE^7
+print(TRUE_power)
 ```
 
 11. Create two character variables containing two verses of your favorite song.
@@ -134,7 +189,23 @@ Raise the logical TRUE to the 7-th power.
 * extract substring starting at the 5th character and 5 characters long.
 
 ```{r}
+line1 <- "TOYOTA Camry is the best"
+line2 <- "A ride that's smoother than the rest"
 
+concatenated <- paste(line1, line2)
+print(concatenated)
+
+concatenated_separator <- paste(line1, line2, sep='*')
+print(concatenated_separator)
+
+contains_and <- grepl("and", line2)
+print(contains_and)
+
+substituted <- sub("Camry", "Corolla", line1)
+print(substituted)
+
+substring_extract <- substr(line1, 5, 9)
+print(substring_extract)
 ```
 
 Thank you. Please submit the finished notebook to Hesham through GitHub.
